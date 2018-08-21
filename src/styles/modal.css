@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+.conversion-form {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+  border-color: #46a851;
+  border-style: outset;
+}
+
+.conversion-form div {
+  padding: 10px;
+}
