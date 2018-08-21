@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/thm-logo.png">
+    <h1>Top 15 Coins by MarketCap Vue JS Demo</h1>
     <router-view/>
   </div>
 </template>

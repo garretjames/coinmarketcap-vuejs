@@ -70,25 +70,15 @@ export default {
       },
       specific_coin_amount: 0,
       timer: '',
-      coinName: '',
-      i: 5
+      coinName: ''
     }
   },
   created: function () {
     this.fetchCoinInfo()
     setInterval(this.fetchCoinInfo, 10000)
   },
-  // TODO check what the mounted function does
-  /* mounted() {
-    axios({ method: 'GET', 'url': 'https://api.coinmarketcap.com/v1/ticker/?limit=20' }).then(result => {
-      this.coins = result.data
-    }, error => {
-      console.error(error)
-    })
-  }, */
   methods: {
     fetchCoinInfo: function () {
-      // this.i++
       axios({ method: 'GET', 'url': 'https://api.coinmarketcap.com/v1/ticker/?limit=15' }).then(result => {
         this.coins = result.data
       }, error => {
