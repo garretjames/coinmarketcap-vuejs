@@ -79,14 +79,20 @@ export default {
   },
   methods: {
     fetchCoinInfo: function () {
-      axios({ method: 'GET', 'url': 'https://api.coinmarketcap.com/v1/ticker/?limit=15' }).then(result => {
-        this.coins = result.data
-      }, error => {
-        console.error(error)
-      })
+      axios({
+        method: 'GET',
+        url: 'https://api.coinmarketcap.com/v1/ticker/?limit=15'
+      }).then(
+        result => {
+          this.coins = result.data
+        },
+        error => {
+          console.error(error)
+        }
+      )
     },
     show (coinName) {
-      this.$modal.show('conversion-form', {coinName: coinName})
+      this.$modal.show('conversion-form', { coinName: coinName })
     },
     hide () {
       this.$modal.hide('conversion-form')
@@ -95,19 +101,33 @@ export default {
       console.log(event.params.coinName)
       this.coinName = event.params.coinName
     },
-    cancelAutoUpdate: function () { clearInterval(this.timer) },
+    cancelAutoUpdate: function () {
+      clearInterval(this.timer)
+    },
     beforeDestroy () {
       clearInterval(this.timer)
     },
     convert () {
-      axios({ method: 'GET', 'url': 'https://api.coinmarketcap.com/v1/ticker/' + this.input.cryptocurrency + '/' }).then(result => {
-        this.specific_coin_amount = this.input.amount / result.data[0].price_usd
-      }, error => {
-        console.error(error)
-      })
+      axios({
+        method: 'GET',
+        url:
+          'https://api.coinmarketcap.com/v1/ticker/' +
+          this.input.cryptocurrency +
+          '/'
+      }).then(
+        result => {
+          this.specific_coin_amount =
+            this.input.amount / result.data[0].price_usd
+        },
+        error => {
+          console.error(error)
+        }
+      )
     }
   }
 }
 </script>
-<style src="../styles/table.css"></style>
-<style src="../styles/modal.css"></style>
+<style src="../styles/table.css">
+</style>
+<style src="../styles/modal.css">
+</style>
