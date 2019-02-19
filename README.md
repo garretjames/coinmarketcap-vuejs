@@ -2,6 +2,11 @@
 
 > A Vue.js project
 
+## Description
+SPA using CoinMarketCap API `https://coinmarketcap.com/api/` <br/>
+Displays the top fifteen crypto currencies by market cap <br>
+Each listing has a currency conversion modal
+
 ## Build Setup
 
 ``` bash
